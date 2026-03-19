@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "id": "wf_trigger",
+      "type": "trigger",
+      "position": {
+        "x": 100,
+        "y": 200
+      },
+      "data": {
+        "label": "Trigger",
+        "status": "idle",
+        "ports": {
+          "outputs": [
+            {
+              "id": "trigger-out",
+              "label": "Output",
+              "type": "any"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wf_{{AGENT_ID}}",
+      "type": "agentCall",
+      "position": {
+        "x": 400,
+        "y": 200
+      },
+      "data": {
+        "label": "{{AGENT_NAME}}",
+        "description": "{{AGENT_DESCRIPTION}}",
+        "agentId": "{{AGENT_ID}}",
+        "status": "idle",
+        "ports": {
+          "inputs": [
+            {
+              "id": "agent-in",
+              "label": "Input",
+              "type": "json"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "agent-out",
+              "label": "Response",
+              "type": "json"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wf_output",
+      "type": "output",
+      "position": {
+        "x": 700,
+        "y": 200
+      },
+      "data": {
+        "label": "Output",
+        "status": "idle",
+        "ports": {
+          "inputs": [
+            {
+              "id": "output-in",
+              "label": "Result",
+              "type": "any"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-trigger-agent",
+      "source": "wf_trigger",
+      "target": "wf_{{AGENT_ID}}",
+      "sourceHandle": "trigger-out",
+      "targetHandle": "agent-in"
+    },
+    {
+      "id": "edge-agent-output",
+      "source": "wf_{{AGENT_ID}}",
+      "target": "wf_output",
+      "sourceHandle": "agent-out",
+      "targetHandle": "output-in"
+    }
+  ],
+  "viewport": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  }
+}
