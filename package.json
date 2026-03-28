@@ -1,18 +1,13 @@
 {
-  "name": "{{AGENT_NAME_SLUG}}",
+  "name": "agent-veille-concurrentielle",
   "version": "1.0.0",
-  "description": "{{AGENT_DESCRIPTION}}",
-  "main": "api/status.js",
+  "description": "Agenxia agent",
+  "type": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js"
   },
   "dependencies": {
-    "node-fetch": "^3.3.0",
-    "fastify": "^5.3.0"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "type": "module"
+    "@agenxia/sdk": "github:agenxia/agenxia-sdk"
+  }
 }
