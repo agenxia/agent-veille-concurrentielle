@@ -104,5 +104,21 @@
     "author": "agenxia",
     "source_template": null,
     "type": "template"
+  },
+  "ports": {
+    "inputs": [
+      {
+        "id": "message",
+        "label": "Message",
+        "type": "text"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "response",
+        "label": "Response",
+        "type": "text"
+      }
+    ]
   }
 }
