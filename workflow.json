@@ -5,7 +5,7 @@
       "type": "trigger",
       "position": {
         "x": 100,
-        "y": 200
+        "y": 250
       },
       "data": {
         "label": "Trigger",
@@ -22,30 +22,38 @@
       }
     },
     {
-      "id": "wf_{{AGENT_ID}}",
-      "type": "agentCall",
+      "id": "wf_core",
+      "type": "agentCore",
       "position": {
-        "x": 400,
+        "x": 350,
         "y": 200
       },
       "data": {
-        "label": "{{AGENT_NAME}}",
-        "description": "{{AGENT_DESCRIPTION}}",
-        "agentId": "{{AGENT_ID}}",
+        "label": "Basic Agent",
         "status": "idle",
+        "isCore": true,
+        "config": {
+          "system_prompt": "You are {{AGENT_NAME}}. {{AGENT_DESCRIPTION}}",
+          "model": "llama-3.3-70b",
+          "temperature": 0.7,
+          "max_tokens": 4096
+        },
+        "methods": [
+          "chat"
+        ],
         "ports": {
           "inputs": [
             {
-              "id": "agent-in",
-              "label": "Input",
-              "type": "json"
+              "id": "message",
+              "label": "Message",
+              "type": "text"
             }
           ],
           "outputs": [
             {
-              "id": "agent-out",
+              "id": "response",
               "label": "Response",
-              "type": "json"
+              "type": "text"
             }
           ]
         }
@@ -55,8 +63,8 @@
       "id": "wf_output",
       "type": "output",
       "position": {
-        "x": 700,
-        "y": 200
+        "x": 650,
+        "y": 250
       },
       "data": {
         "label": "Output",
@@ -75,17 +83,17 @@
   ],
   "edges": [
     {
-      "id": "edge-trigger-agent",
+      "id": "edge-trigger-core",
       "source": "wf_trigger",
-      "target": "wf_{{AGENT_ID}}",
+      "target": "wf_core",
       "sourceHandle": "trigger-out",
-      "targetHandle": "agent-in"
+      "targetHandle": "message"
     },
     {
-      "id": "edge-agent-output",
-      "source": "wf_{{AGENT_ID}}",
+      "id": "edge-core-output",
+      "source": "wf_core",
       "target": "wf_output",
-      "sourceHandle": "agent-out",
+      "sourceHandle": "response",
       "targetHandle": "output-in"
     }
   ],
