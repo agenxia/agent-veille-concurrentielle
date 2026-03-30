@@ -1,31 +1,10 @@
 {
   "nodes": [
     {
-      "id": "wf_trigger",
-      "type": "trigger",
-      "position": {
-        "x": 100,
-        "y": 250
-      },
-      "data": {
-        "label": "Trigger",
-        "status": "idle",
-        "ports": {
-          "outputs": [
-            {
-              "id": "trigger-out",
-              "label": "Output",
-              "type": "any"
-            }
-          ]
-        }
-      }
-    },
-    {
       "id": "wf_core",
       "type": "agentCore",
       "position": {
-        "x": 350,
+        "x": 300,
         "y": 200
       },
       "data": {
@@ -58,45 +37,9 @@
           ]
         }
       }
-    },
-    {
-      "id": "wf_output",
-      "type": "output",
-      "position": {
-        "x": 650,
-        "y": 250
-      },
-      "data": {
-        "label": "Output",
-        "status": "idle",
-        "ports": {
-          "inputs": [
-            {
-              "id": "output-in",
-              "label": "Result",
-              "type": "any"
-            }
-          ]
-        }
-      }
     }
   ],
-  "edges": [
-    {
-      "id": "edge-trigger-core",
-      "source": "wf_trigger",
-      "target": "wf_core",
-      "sourceHandle": "trigger-out",
-      "targetHandle": "message"
-    },
-    {
-      "id": "edge-core-output",
-      "source": "wf_core",
-      "target": "wf_output",
-      "sourceHandle": "response",
-      "targetHandle": "output-in"
-    }
-  ],
+  "edges": [],
   "viewport": {
     "x": 0,
     "y": 0,
