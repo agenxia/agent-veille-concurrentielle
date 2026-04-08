@@ -15,25 +15,6 @@
           "temperature": 0.7,
           "max_tokens": 4096
         },
-        "methods": [
-          "chat"
-        ],
-        "ports": {
-          "inputs": [
-            {
-              "id": "message",
-              "label": "Message",
-              "type": "text"
-            }
-          ],
-          "outputs": [
-            {
-              "id": "response",
-              "label": "Response",
-              "type": "text"
-            }
-          ]
-        },
         "moduleId": "agent-core",
         "moduleIcon": "cpu",
         "moduleColor": "#e11d48"
