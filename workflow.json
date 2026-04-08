@@ -2,15 +2,13 @@
   "nodes": [
     {
       "id": "wf_core",
-      "type": "agentCore",
+      "type": "module",
       "position": {
         "x": 300,
         "y": 200
       },
       "data": {
         "label": "Basic Agent",
-        "status": "idle",
-        "isCore": true,
         "config": {
           "system_prompt": "You are {{AGENT_NAME}}. {{AGENT_DESCRIPTION}}",
           "model": "llama-3.3-70b",
@@ -35,7 +33,10 @@
               "type": "text"
             }
           ]
-        }
+        },
+        "moduleId": "agent-core",
+        "moduleIcon": "cpu",
+        "moduleColor": "#e11d48"
       }
     }
   ],
