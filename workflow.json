@@ -40,6 +40,7 @@
       }
     }
   ],
+  "entrypoint": "wf_core",
   "edges": [],
   "viewport": {
     "x": 0,
