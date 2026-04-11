@@ -5,12 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "concurrently --names \"agent,sync\" --prefix-colors \"blue,magenta\" \"node --watch server.js\" \"node scripts/watch-workflow.js\""
+    "dev": "node --watch server.js"
   },
   "dependencies": {
     "@agenxia/sdk": "github:agenxia/agenxia-sdk"
-  },
-  "devDependencies": {
-    "concurrently": "^9.0.0"
   }
 }
