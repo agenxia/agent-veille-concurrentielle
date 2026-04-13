@@ -8,6 +8,6 @@
     "dev": "node --watch server.js"
   },
   "dependencies": {
-    "@agenxia/sdk": "github:agenxia/agenxia-sdk#v2.2.0"
+    "@agenxia/sdk": "github:agenxia/agenxia-sdk"
   }
 }
